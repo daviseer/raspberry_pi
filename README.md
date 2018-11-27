@@ -49,4 +49,26 @@ Hidden=false
 
 Agora o raspberry pi, ao iniciar junto ao usuário pi, abrirá o navegador automaticamente um modo kiosk
 
+>>Salvando abas abertas no chrome sem reiniciar histórico:
+Abra o navegador (no caso utilizamos o Chromium)
+Deixe aberto as abas desejadas para iniciarem automaticamente ao iniciar
+Abra o terminal (Ctrl+Alt+T)
+digite: cd ./config/chromium/Default 
+agora, faça uma cópia de segurança para estes arquivos(pois iremos modifica-los):
+$ sudo cp Preferences Preferences_original
+$ sudo cp History History_original
+
+$ sudo nano Preferences
+Procure pelo arquivo exit_type: Ctrl+W exit_type
+Mude para “exit_type”:”Normal”
+Feche e salve: Ctrl+X, y, enter
+Agora, modificaremos a permição do arquivo Preferences:
+$ sudo chattr +i Preferences 
+
+>>backup : https://www.raspberrypi.org/documentation/linux/filesystem/backup.md
+Aqui estão algumas instruções sobre o backup com RaspberryPi no Linux.
+
+https://maker.pro/raspberry-pi/tutorial/how-to-back-up-your-raspberry-pi-project-files
+
+
 
